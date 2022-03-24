@@ -32,7 +32,7 @@ const Books = () => {
       <div className="p-5 container-fluid">
         <div className="">
           {books.map((book) => (
-            <Book key={book.id} props={book} />
+            <Book key={book.id} bookInfo={book} />
           ))}
         </div>
         <div className="py-5 border-top">
