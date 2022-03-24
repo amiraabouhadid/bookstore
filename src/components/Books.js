@@ -1,28 +1,31 @@
-import React from "react";
-import Book from "./Book";
-import NewBookForm from "./NewBookForm";
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Book from './Book';
+import NewBookForm from './NewBookForm';
+
 const Books = () => {
   const books = [
     {
-      id: 1,
-      category: "action",
-      title: "the hunger games",
-      author: "your mom",
-      currentChapter: "Chapter 17",
+      id: uuidv4(),
+      category: 'action',
+      title: 'the hunger games',
+      author: 'your mom',
+      currentChapter: 'Chapter 17',
     },
     {
-      id: 2,
-      category: "action",
-      title: "the hunger games",
-      author: "your mom",
-      currentChapter: "Chapter 17",
+      id: uuidv4(),
+      category: 'action',
+      title: 'the hunger games',
+      author: 'your mom',
+      currentChapter: 'Chapter 17',
     },
     {
-      id: 3,
-      category: "action",
-      title: "the hunger games",
-      author: "your mamaaaa",
-      currentChapter: "Chapter 17",
+      id: uuidv4(),
+      category: 'action',
+      title: 'the hunger games',
+      author: 'your mamaaaa',
+      currentChapter: 'Chapter 17',
     },
   ];
   return (

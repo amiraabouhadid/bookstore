@@ -1,12 +1,18 @@
-import React, { useState } from "react";
-import Pie from "./Pie";
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Pie from './Pie';
 
 const Book = (props) => {
-  const { id, category, title, author, currentChapter } = props.bookInfo;
+  const {
+    category, title, author, currentChapter,
+  } = props.bookInfo;
   const [random, setRandom] = useState({
     percentage: 65,
-    colour: "blue",
+    colour: 'blue',
   });
+
   const generateRandomValues = () => {
     const rand = (n) => Math.random() * n;
     setRandom({
@@ -14,32 +20,31 @@ const Book = (props) => {
       colour: `hsl(${rand(360)}, ${rand(50) + 50}%, ${rand(30) + 20}%)`,
     });
   };
+  useEffect(() => {
+    generateRandomValues();
+  }, []);
   const bookLinks = [
     {
-      id: "73912",
-      text: "Comments",
-      href: "",
+      id: uuidv4(),
+      text: 'Comments',
+      href: '',
     },
     {
-      id: "19031",
-      text: "Remove",
-      href: "",
+      id: uuidv4(),
+      text: 'Remove',
+      href: '',
     },
     {
-      id: "w12",
-      text: "Edit",
-      href: "",
+      id: uuidv4(),
+      text: 'Edit',
+      href: '',
     },
   ];
-  const capitalizeString = (string) => {
-    return string
-      .trim()
-      .split(" ")
-      .map((word) => {
-        return word[0].toUpperCase() + word.substring(1);
-      })
-      .join(" ");
-  };
+  const capitalizeString = (string) => string
+    .trim()
+    .split(' ')
+    .map((word) => word[0].toUpperCase() + word.substring(1))
+    .join(' ');
   return (
     <div className="p-4 border bg-white row my-5">
       <div className="bg-white col-4">
@@ -48,8 +53,8 @@ const Book = (props) => {
             {category[0].toUpperCase() + category.substring(1)}
           </b>
           <h4
-            style={{ paddingBottom: "0", marginBottom: "0" }}
-            className="bg-white pt-1 "
+            style={{ paddingBottom: '0', marginBottom: '0' }}
+            className="bg-white pt-1"
           >
             {capitalizeString(title)}
           </h4>
@@ -58,30 +63,28 @@ const Book = (props) => {
           </small>
         </div>
         <div className="bg-white w-75 d-flex justify-content-between align-items-baseline text-primary">
-          {bookLinks.map((bk, index) =>
-            index === bookLinks.length - 1 ? (
+          {bookLinks.map((bk, index) => (index === bookLinks.length - 1 ? (
+            <a
+              key={bk.id}
+              href={bk.href}
+              style={{ textDecoration: 'none' }}
+              className="bg-white"
+            >
+              {bk.text}
+            </a>
+          ) : (
+            <>
               <a
                 key={bk.id}
                 href={bk.href}
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: 'none' }}
                 className="bg-white"
               >
                 {bk.text}
               </a>
-            ) : (
-              <React.Fragment>
-                <a
-                  key={bk.id}
-                  href={bk.href}
-                  style={{ textDecoration: "none" }}
-                  className="bg-white"
-                >
-                  {bk.text}
-                </a>
-                <p>|</p>
-              </React.Fragment>
-            )
-          )}
+              <p>|</p>
+            </>
+          )))}
         </div>
       </div>
       <div className="col-4 d-flex justify-content-end px-5 bg-white ">
@@ -90,12 +93,13 @@ const Book = (props) => {
           <p
             className="bg-white"
             style={{
-              fontSize: "1.95rem",
-              marginTop: "1.60rem",
-              marginBottom: "0",
+              fontSize: '1.95rem',
+              marginTop: '1.60rem',
+              marginBottom: '0',
             }}
           >
-            {random.percentage}%
+            {random.percentage}
+            %
           </p>
           <small className="bg-white text-secondary"> Completed</small>
         </div>
@@ -103,18 +107,18 @@ const Book = (props) => {
       <div className="col-4 bg-white px-5 pt-1">
         <div className="bg-white ">
           <p
-            style={{ fontSize: "0.813rem" }}
+            style={{ fontSize: '0.813rem' }}
             className="bg-white text-secondary"
           >
-            {`Current Chapter`.toUpperCase()}
+            {'Current Chapter'.toUpperCase()}
           </p>
-          <p style={{ fontSize: "1rem" }} className="bg-white">
+          <p style={{ fontSize: '1rem' }} className="bg-white">
             {currentChapter}
           </p>
         </div>
         <div className="bg-white">
-          <button className="btn btn-primary w-100">
-            {`Update Progress`.toUpperCase()}
+          <button type="submit" className="btn btn-primary w-100">
+            {'Update Progress'.toUpperCase()}
           </button>
         </div>
       </div>
