@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
@@ -33,7 +32,7 @@ const Books = () => {
       <div className="p-5 container-fluid">
         <div className="">
           {books.map((book) => (
-            <Book key={book.id} bookInfo={book} />
+            <Book key={book.id} props={book} />
           ))}
         </div>
         <div className="py-5 border-top">
