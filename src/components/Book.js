@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/jsx-indent */
 import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Pie from './Pie';
@@ -73,17 +74,17 @@ const Book = (props) => {
               {bk.text}
             </a>
           ) : (
-            <>
-              <a
-                key={bk.id}
-                href={bk.href}
-                style={{ textDecoration: 'none' }}
-                className="bg-white"
-              >
-                {bk.text}
-              </a>
-              <p>|</p>
-            </>
+              <>
+                <a
+                  key={bk.id}
+                  href={bk.href}
+                  style={{ textDecoration: 'none' }}
+                  className="bg-white"
+                >
+                  {bk.text}
+                </a>
+                <p>|</p>
+              </>
           )))}
         </div>
       </div>
@@ -98,7 +99,7 @@ const Book = (props) => {
               marginBottom: '0',
             }}
           >
-            {random.percentage}
+            {Math.trunc(random.percentage)}
             %
           </p>
           <small className="bg-white text-secondary"> Completed</small>
