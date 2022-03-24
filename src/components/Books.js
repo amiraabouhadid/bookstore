@@ -17,6 +17,13 @@ const Books = () => {
       author: "your mom",
       currentChapter: "Chapter 17",
     },
+    {
+      id: 3,
+      category: "action",
+      title: "the hunger games",
+      author: "your mamaaaa",
+      currentChapter: "Chapter 17",
+    },
   ];
   return (
     <>
