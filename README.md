@@ -13,7 +13,7 @@
 
 ## Live demo
 
-You can visit live version via [link](https://amiraabouhadid.github.io/bookstore/)
+You can visit live version via [link](https://bookstore.github.io/)
 
 ## Getting Started
 
