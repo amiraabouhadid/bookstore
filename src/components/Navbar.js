@@ -4,7 +4,7 @@ import { ImUser } from 'react-icons/im';
 
 const Navbar = () => {
   const links = [
-    { id: 1, path: '/', text: 'Books' },
+    { id: 1, path: '/bookstore', text: 'Books' },
     { id: 2, path: '/categories', text: 'Categories' },
   ];
   return (
