@@ -1,6 +1,6 @@
 const CHECK = 'app/categories/STATUS_CHECKED';
 
-const reducer = (state = {}, action) => {
+const reducer = (state = [], action) => {
   switch (action.type) {
     case CHECK:
       return action.text;

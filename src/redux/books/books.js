@@ -1,6 +1,6 @@
 const ADD = 'app/books/BOOK_ADDED';
 const REMOVE = 'app/books/BOOK_REMOVED';
-const reducer = (state = {}, action) => {
+const reducer = (state = [], action) => {
   switch (action.type) {
     case ADD:
       return [...state, action.book];
