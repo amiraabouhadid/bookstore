@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Math Magicians
+# Bookstore
 
 >A single page app where users can track their progess in reading books, comment on books, or remove books from their library.
 
