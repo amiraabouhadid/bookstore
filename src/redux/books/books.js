@@ -1,5 +1,6 @@
 const ADD = 'app/books/BOOK_ADDED';
 const REMOVE = 'app/books/BOOK_REMOVED';
+
 const reducer = (state = [], action) => {
   switch (action.type) {
     case ADD:
@@ -18,4 +19,5 @@ export const removeBook = (index) => ({
   type: REMOVE,
   index,
 });
+
 export default reducer;
