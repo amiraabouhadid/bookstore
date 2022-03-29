@@ -6,4 +6,5 @@ import categories from './categories/categories';
 const rootReducer = combineReducers({
   books, categories,
 });
-export default createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(logger));
+export default store;
