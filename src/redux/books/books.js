@@ -58,6 +58,7 @@ export const getBooks = () => async (dispatch) => {
         title: res.data[key][0].title,
         author: res.data[key][0].author,
         category: res.data[key][0].category,
+        currentChapter: 'Introduction',
 
       });
     });
