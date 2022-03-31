@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const NewBookForm = (props) => {
   const [newBook, setNewBook] = useState({
-    itemId: uuidv4(), category: 'action', title: '', author: '',
+    id: uuidv4(), category: 'action', title: '', author: '', currentChapter: 'Chapter 1',
   });
   const addBookAuthor = (e) => {
     setNewBook({
