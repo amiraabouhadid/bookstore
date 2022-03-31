@@ -64,7 +64,7 @@ const Book = (props) => {
             className="bg-white"
             onClick={(e) => {
               e.preventDefault();
-              removeBookDispatch(itemId);
+              removeBookDispatch(props.bookIndex);
             }}
           >
             {bk.text}
