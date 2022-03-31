@@ -8,7 +8,7 @@ const reducer = (books = [], action) => {
   const { type, payload } = action;
   switch (type) {
     case ADD:
-      return [...books, action.book];
+      return [...books, payload];
     case REMOVE:
       return books.filter((book) => book.itemId !== payload);
     case GETBOOKS:
@@ -27,8 +27,8 @@ export const addBook = (book) => async (dispatch) => {
     });
     dispatch({
       type: ADD,
-      payload: res.data,
-      book,
+      payload: book,
+
     });
     return Promise.resolve(res.data);
   } catch (err) {
