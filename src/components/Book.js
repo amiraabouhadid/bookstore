@@ -140,7 +140,7 @@ const Book = (props) => {
               {'Current Chapter'.toUpperCase()}
             </p>
             <p style={{ fontSize: '1rem' }} className="bg-white">
-              {}
+              Chapter 17
             </p>
           </div>
           <div className="bg-white">
