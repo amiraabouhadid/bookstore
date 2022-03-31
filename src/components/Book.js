@@ -6,7 +6,7 @@ import Pie from './Pie';
 
 const Book = (props) => {
   const {
-    itemId, category, title, author, currentChapter,
+    category, title, author, currentChapter,
   } = props.bookInfo;
   const [random, setRandom] = useState({
     percentage: 65,
