@@ -6,7 +6,7 @@ import Pie from './Pie';
 
 const Book = (props) => {
   const {
-    category, title, author, currentChapter,
+    itemId, category, title, author,
   } = props.bookInfo;
   const [random, setRandom] = useState({
     percentage: 65,
@@ -64,7 +64,7 @@ const Book = (props) => {
             className="bg-white"
             onClick={(e) => {
               e.preventDefault();
-              removeBookDispatch(props.bookIndex);
+              removeBookDispatch(itemId);
             }}
           >
             {bk.text}
@@ -140,7 +140,7 @@ const Book = (props) => {
               {'Current Chapter'.toUpperCase()}
             </p>
             <p style={{ fontSize: '1rem' }} className="bg-white">
-              {currentChapter}
+              Chapter 17
             </p>
           </div>
           <div className="bg-white">
