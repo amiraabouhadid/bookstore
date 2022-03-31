@@ -61,7 +61,7 @@ const Book = (props) => {
           <button
             type="submit"
             style={{ textDecoration: 'none' }}
-            className="bg-white"
+            className="bg-white border-0 text-primary"
             onClick={(e) => {
               e.preventDefault();
               removeBookDispatch(itemId);
